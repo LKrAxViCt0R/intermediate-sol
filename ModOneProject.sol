@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 
 contract ModOneProject{
     uint balance; //balance = 0
+    uint totalGas = 10000;
 
     function addMoney(uint _moneyAdd) public{ //_moneyAdd=300
 
@@ -28,4 +29,21 @@ contract ModOneProject{
 
         assert(balance <= oldBalance);
     }
+
+    function gasUsed(uint _gasToBeUsed) public{ //_gasUsed = 150
+        uint oldGas = totalGas;
+        uint newGas = oldGas - _gasToBeUsed;
+
+        if(newGas >= oldGas){
+
+            revert("The gas was not spent, and transaction failed");
+        
+        }else{
+
+            totalGas = newGas;
+        
+        }
+
+    }
+
 }
