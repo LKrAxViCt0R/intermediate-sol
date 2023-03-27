@@ -32,6 +32,8 @@ contract Challenge is TheAbstract,TheInterface{ //The contract challenge is deri
 
 }
 
+//The below code is for solidity version lower than solidity 6
+//After solidity 6, three new keywords were added i.e. - abstract, virtual, override
 
 /*
 
